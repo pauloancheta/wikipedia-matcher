@@ -16,17 +16,15 @@ var HomeIndex = React.createClass({
     },
     function(data) {
       self.setState({searchResults: data.query.search})
-      // $.each(data.query.search, function(i, item){
-      //   console.log(encodeURIComponent(item.title));
-      // })
     });
   },
 
   render: function() {
     results = []
-    this.state.searchResults.forEach(function(result){
-      results.push(result.title)
+    this.state.searchResults.forEach(function(result, key){
+      results.push(<Article articleData={result} key={key} />)
     });
+
     return(
       <div>
         <form onSubmit={this.onSubmitHandler}>
