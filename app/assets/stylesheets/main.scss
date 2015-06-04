@@ -30,3 +30,17 @@ header{
     margin: 0;
   }
 }
+
+a.article-link {
+  text-decoration: none;
+}
+
+a.like {
+  border: 1px solid green;
+  padding: 3px;
+}
+
+a.unlike{
+  border: 1px solid red;
+  padding: 3px;
+}

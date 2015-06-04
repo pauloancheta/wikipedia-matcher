@@ -30,7 +30,7 @@ var Article = React.createClass({
       <div>
         <h1 className="article-title">{this.state.article.title}</h1>
         <div className="like-container">
-          {this.state.favourited ? <a onClick={this.removeFavourite}>unlike!</a> : <a onClick={this.addFavourite}>Like!</a> }
+          {this.state.favourited ? <a onClick={this.removeFavourite} className="unlike">unlike!</a> : <a onClick={this.addFavourite} className="like">Like!</a> }
         </div>
 
         <br />
@@ -39,7 +39,7 @@ var Article = React.createClass({
           {snippet}
         </div>
 
-        <a href={link}>Go to the article!</a>
+        <a href={link} className="article-link">Go to the article!</a>
       </div>
     )
   }
