@@ -4,7 +4,7 @@ var Article = React.createClass({
   },
 
   componentWillReceiveProps: function(nextProps){
-    this.setState({article: nextProps.articleData})
+    this.setState({article: nextProps.articleData, favourited: nextProps.favourited})
   },
 
   addFavourite: function(){
