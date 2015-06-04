@@ -3,6 +3,10 @@ var Article = React.createClass({
     return{article: this.props.articleData, favourited: this.props.favourited}
   },
 
+  componentWillReceiveProps: function(nextProps){
+    this.setState({article: nextProps.articleData})
+  },
+
   addFavourite: function(){
     $.post('/favourites', {title: this.state.article.title})
     this.setState({favourited: true})
@@ -19,13 +23,23 @@ var Article = React.createClass({
 
   render: function(){
     var link = "http://en.wikipedia.org/wiki/" + encodeURIComponent(this.state.article.title)
+    var snippet = this.state.article.snippet.replace(/(<([^>]+)>)/ig,"");
+    snippet = snippet.replace(/&quot;(.*?)&quot/,"")
+
     return(
       <div>
-        <h1>{this.state.article.title}</h1>
+        <h1 className="article-title">{this.state.article.title}</h1>
+        <div className="like-container">
+          {this.state.favourited ? <a onClick={this.removeFavourite}>unlike!</a> : <a onClick={this.addFavourite}>Like!</a> }
+        </div>
+
+        <br />
+
+        <div>
+          {snippet}
+        </div>
 
         <a href={link}>Go to the article!</a>
-
-        {this.state.favourited ? <a onClick={this.removeFavourite}>unlike</a> : <a onClick={this.addFavourite}>Like!</a> }
       </div>
     )
   }

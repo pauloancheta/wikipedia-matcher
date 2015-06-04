@@ -27,17 +27,21 @@ var HomeIndex = React.createClass({
     results = []
     var self = this;
     this.state.searchResults.forEach(function(result, key){
-      favourited = self.state.favourites.indexOf(result.title) >= 0
+      favourited = self.state.favourites.indexOf(result.title) >= 0;
       results.push(<Article articleData={result} key={key} favourited={favourited}/>)
     });
 
     return(
       <div>
-        <form onSubmit={this.onSubmitHandler}>
-          <input type="text" ref="search" placeholder="Search an Wikipedia!"></input>
-          <input type="submit"></input>
-        </form>
-        {results}
+        <div className="search-toolbar">
+          <form onSubmit={this.onSubmitHandler}>
+            <input type="text" ref="search" placeholder="Search an Wikipedia!"></input>
+            <input type="submit"></input>
+          </form>
+        </div>
+        <div className="results-container">
+          {results}
+        </div>
       </div>
     )
   }

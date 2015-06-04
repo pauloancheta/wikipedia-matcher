@@ -1,0 +1,18 @@
+.search-toolbar {
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.results-container {
+  padding-left: 15px;
+}
+
+.article-title, .like-container {
+  display: inline-block;
+}
+
+.like-container {
+  margin-left: 10px;
+  cursor: pointer;
+}
