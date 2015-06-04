@@ -8,7 +8,8 @@ var Article = React.createClass({
   },
 
   addFavourite: function(){
-    $.post('/favourites', {title: this.state.article.title})
+    var link = "http://en.wikipedia.org/wiki/" + encodeURIComponent(this.state.article.title)
+    $.post('/favourites', {title: this.state.article.title, snippet: this.state.articleData.snippet, link: link})
     this.setState({favourited: true})
   },
 

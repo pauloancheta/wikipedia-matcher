@@ -1,6 +1,9 @@
 class FavouritesController < ApplicationController
   def create
-    favourite = Favourite.new(title: params[:title])
+    favourite = Favourite.new(title: params[:title], 
+                              snippet: params[:snippet],
+                              link: params[:link]
+                              )
     favourite.save!
     render nothing: true
   end

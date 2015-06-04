@@ -11,4 +11,4 @@ In the search bar, search for articles that you would like to find in Wikipedia,
 ![alt tag](https://github.com/pauloancheta/wikipedia-matcher/blob/master/wikipedia-matcher-demo.gif)
 
 ## Technologies Used
-Ruby, Ruby on Rails, Javascript, React.js, jQuery, SASS
+Ruby, Ruby on Rails, Javascript, React.js, jQuery, SASS, PostgresQL
