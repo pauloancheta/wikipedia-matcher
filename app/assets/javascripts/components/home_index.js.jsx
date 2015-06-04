@@ -33,6 +33,11 @@ var HomeIndex = React.createClass({
 
     return(
       <div>
+        <header>
+          <h1> Wikipedia Test </h1>
+          <div className="company-logo"></div>
+        </header>
+        
         <div className="search-toolbar">
           <form onSubmit={this.onSubmitHandler}>
             <input type="text" ref="search" placeholder="Search an Wikipedia!"></input>

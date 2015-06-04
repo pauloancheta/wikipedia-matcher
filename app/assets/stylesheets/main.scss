@@ -1,6 +1,6 @@
 .search-toolbar {
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
   padding-bottom: 30px;
 }
 
@@ -15,4 +15,18 @@
 .like-container {
   margin-left: 10px;
   cursor: pointer;
+}
+
+header{
+  text-align: center;
+  padding-top: 20px;
+  .company-logo {
+    background: url(asset-path('officepools.jpg')) no-repeat;
+    height: 50px;
+    width: 200px;
+    margin: 0 auto;
+  }
+  h1 {
+    margin: 0;
+  }
 }
