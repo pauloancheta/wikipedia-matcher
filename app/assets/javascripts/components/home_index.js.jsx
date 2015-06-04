@@ -25,7 +25,7 @@ var HomeIndex = React.createClass({
 
   render: function() {
     results = []
-    var self = this; }}
+    var self = this;
     this.state.searchResults.forEach(function(result, key){
       favourited = self.state.favourites.indexOf(result.title) >= 0
       results.push(<Article articleData={result} key={key} favourited={favourited}/>)
