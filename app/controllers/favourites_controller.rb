@@ -1,8 +1,4 @@
 class FavouritesController < ApplicationController
-  def index
-    @favourite = Favourite.all
-  end
-
   def create
     favourite = Favourite.new(title: params[:title])
     favourite.save!
@@ -10,7 +6,7 @@ class FavouritesController < ApplicationController
   end
 
   def destroy
-    favourite = Favourite.find(title: params[:title])
+    favourite = Favourite.where(title: params[:title]).first
     favourite.destroy!
     render nothing: true
   end
